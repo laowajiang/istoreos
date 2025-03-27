@@ -1,0 +1,9 @@
+/*
+ * Copyright (c) 2021 Rockchip Electronics Co., Ltd.
+ * Copyright (c) 2025 jjm2473 <jjm2473@gmail.com>
+ */
+
+#include "rk3568-vpu.dtsi"
+#include "rk3568-gpu.dtsi"
+#include "rk3568-npu.dtsi"
+#include "rk3568-crypto.dtsi"
