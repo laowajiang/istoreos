@@ -19,7 +19,7 @@ $(call Device/Legacy/rk3568,$(1))
   DEVICE_MODEL := R68s/R66s combined
   SUPPORTED_DEVICES += lunzn,fastrhino-r66s lunzn,fastrhino-r68s
   SUPPORTED_DEVICES += fastrhino,r66s fastrhino,r68s
-  DEVICE_DTS := rk3568-fastrhino-r66s rk3568-fastrhino-r68s
+  DEVICE_DTS := rk3568/rk3568-fastrhino-r66s rk3568/rk3568-fastrhino-r68s
   BOOT_SCRIPT := rk3568-fastrhino
   DEVICE_PACKAGES := kmod-r8169
 endef
