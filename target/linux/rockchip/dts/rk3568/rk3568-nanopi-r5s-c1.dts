@@ -18,13 +18,6 @@
 	};
 };
 
-&mach {
-	hwrev = <7>;
-	model = "NanoPi R5S C1";
-};
-
-/delete-node/ &r8125_2;
-
 &pcie3x1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&m2_w_disable_pin>;

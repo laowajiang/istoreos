@@ -12,11 +12,6 @@
 	compatible = "friendlyelec,nanopi-r5s", "rockchip,rk3568";
 };
 
-&mach {
-	hwrev = <5>;
-	model = "NanoPi R5S LTS";
-};
-
 &pcie3x2 {
 	max-link-speed = <3>;
 };
