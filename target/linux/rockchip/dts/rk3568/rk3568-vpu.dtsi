@@ -3,6 +3,8 @@
  * Copyright (c) 2025 jjm2473 <jjm2473@gmail.com>
  */
 
+/delete-node/ &vepu;
+
 / {
 	mpp_srv: mpp-srv {
 		compatible = "rockchip,mpp-service";
