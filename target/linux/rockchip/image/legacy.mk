@@ -4,6 +4,7 @@ define Device/Legacy/rk3568
 $(call Device/Legacy,$(1))
   SOC := rk3568
   UBOOT_DEVICE_NAME := easepi-rk3568
+  BOOT_SCRIPT := rk3568
   DEVICE_PACKAGES := kmod-rga3 kmod-rk_vcodec kmod-rkgpu-bifrost kmod-rknpu
 endef
 
@@ -13,6 +14,15 @@ $(call Device/Legacy/rk3568,$(1))
   DEVICE_DTS = rk3568/$$(SOC)-$(lastword $(subst _, ,$(1)))
 endef
 
+define Device/easepi_r1
+$(call Device/Legacy/rk3568,$(1))
+  DEVICE_VENDOR := EasePi
+  DEVICE_MODEL := R1
+  DEVICE_DTS := rk3568/rk3568-easepi-r1
+  DEVICE_PACKAGES += kmod-r8169 kmod-nvme
+endef
+TARGET_DEVICES += easepi_r1
+
 define Device/fastrhino_r6xs
 $(call Device/Legacy/rk3568,$(1))
   DEVICE_VENDOR := FastRhino
@@ -21,7 +31,7 @@ $(call Device/Legacy/rk3568,$(1))
   SUPPORTED_DEVICES += fastrhino,r66s fastrhino,r68s
   DEVICE_DTS := rk3568/rk3568-fastrhino-r66s rk3568/rk3568-fastrhino-r68s
   BOOT_SCRIPT := rk3568-fastrhino
-  DEVICE_PACKAGES := kmod-r8169
+  DEVICE_PACKAGES += kmod-r8169
 endef
 TARGET_DEVICES += fastrhino_r6xs
 
@@ -29,7 +39,7 @@ define Device/friendlyarm_nanopi-r5c
 $(call Device/Legacy/rk3568,$(1))
   DEVICE_VENDOR := FriendlyARM
   DEVICE_MODEL := NanoPi R5C
-  DEVICE_PACKAGES := kmod-r8169 kmod-rtw88-8822ce rtl8822ce-firmware wpad-basic-mbedtls
+  DEVICE_PACKAGES += kmod-r8169 kmod-rtw88-8822ce rtl8822ce-firmware wpad-basic-mbedtls
 endef
 
 define Device/friendlyarm_nanopi-r5s
@@ -48,6 +58,7 @@ define Device/Legacy/rk3588
 $(call Device/Legacy,$(1))
   SOC := rk3588
   UBOOT_DEVICE_NAME := easepi-rk3588
+  BOOT_SCRIPT := rk3588
   DEVICE_PACKAGES := kmod-rga3 kmod-rk_vcodec kmod-rkgpu-bifrost-csf-coex kmod-rknpu
 endef
 
@@ -73,5 +84,5 @@ define Device/friendlyarm_nanopi-r6c
 $(call Device/Legacy/rk3588s,$(1))
   DEVICE_VENDOR := FriendlyARM
   DEVICE_MODEL := NanoPi R6C
-  DEVICE_PACKAGES := kmod-r8169
+  DEVICE_PACKAGES += kmod-r8169
 endef
